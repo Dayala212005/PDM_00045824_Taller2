@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
+import com.pdm0126.foodspot.screens.restauranteLista.RestauranteListas
 
 @Composable
 fun FoodSpot() {
@@ -14,7 +15,8 @@ fun FoodSpot() {
         onBack = { backStack.removeLastOrNull() },
         entryProvider = entryProvider{
             entry<Routes.RestauranteListas> {
-
+                RestauranteListas(onDetail = { id ->
+                    backStack.add(Routes.RestauranteDetail(id))})
             }
             entry<Routes.RestauranteDetail> {
 

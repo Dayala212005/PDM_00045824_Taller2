@@ -4,13 +4,14 @@ import com.pdm0126.foodspot.model.Dish
 import com.pdm0126.foodspot.model.Restaurant
 
 val sampleRestaurants = listOf(
-    
+
     Restaurant(
         id = 1,
         name = "Olive Garden",
         description = "Cadena italiana familiar famosa por su pasta ilimitada y pan de ajo",
         imageUrl = "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
         categories = listOf("Italiana", "Pasta"),
+        rating = 4.2,
         menu = listOf(
             Dish(
                 id = 1,
@@ -39,6 +40,7 @@ val sampleRestaurants = listOf(
         description = "Cocina italiana tradicional con recetas familiares desde 1986",
         imageUrl = "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
         categories = listOf("Italiana", "Pizzas"),
+        rating = 4.5,
         menu = listOf(
             Dish(
                 id = 4,
@@ -60,13 +62,14 @@ val sampleRestaurants = listOf(
             )
         )
     ),
-   
+
     Restaurant(
         id = 3,
         name = "McDonald's",
         description = "La cadena de comida rápida más reconocida del mundo desde 1940",
         imageUrl = "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=800",
         categories = listOf("Americana", "Comida Rápida"),
+        rating = 3.6,
         menu = listOf(
             Dish(
                 id = 7,
@@ -95,6 +98,7 @@ val sampleRestaurants = listOf(
         description = "Home of the Whopper, famosa por sus hamburguesas a la parrilla",
         imageUrl = "https://images.unsplash.com/photo-1550317138-10000687a72b?w=800",
         categories = listOf("Americana", "Comida Rápida"),
+        rating = 3.4,
         menu = listOf(
             Dish(
                 id = 10,
@@ -116,13 +120,14 @@ val sampleRestaurants = listOf(
             )
         )
     ),
-    
+
     Restaurant(
         id = 5,
         name = "Nobu",
         description = "Restaurante japonés de lujo del chef Nobu Matsuhisa, con sedes en todo el mundo",
         imageUrl = "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=800",
         categories = listOf("Japonesa", "Sushi"),
+        rating = 4.8,
         menu = listOf(
             Dish(
                 id = 13,
@@ -151,6 +156,7 @@ val sampleRestaurants = listOf(
         description = "Teppanyaki japonés con chefs que cocinan en vivo frente a ti",
         imageUrl = "https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=800",
         categories = listOf("Japonesa", "Hibachi"),
+        rating = 4.6,
         menu = listOf(
             Dish(
                 id = 16,
@@ -172,13 +178,14 @@ val sampleRestaurants = listOf(
             )
         )
     ),
-    
+
     Restaurant(
         id = 7,
         name = "Chipotle",
         description = "Burritos y bowls mexicanos frescos hechos al momento con ingredientes naturales",
         imageUrl = "https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=800",
         categories = listOf("Mexicana", "Comida Rápida"),
+        rating = 4.1,
         menu = listOf(
             Dish(
                 id = 19,
@@ -207,6 +214,7 @@ val sampleRestaurants = listOf(
         description = "La cadena de comida mexicana rápida más grande del mundo desde 1962",
         imageUrl = "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800",
         categories = listOf("Mexicana", "Comida Rápida"),
+        rating = 3.3,
         menu = listOf(
             Dish(
                 id = 22,
@@ -228,13 +236,14 @@ val sampleRestaurants = listOf(
             )
         )
     ),
-    
+
     Restaurant(
         id = 9,
         name = "Texas Roadhouse",
         description = "Steakhouse americano famoso por sus cortes a mano y rolls de canela",
         imageUrl = "https://images.unsplash.com/photo-1544025162-d76694265947?w=800",
         categories = listOf("Americana", "Carnes"),
+        rating = 4.4,
         menu = listOf(
             Dish(
                 id = 25,
@@ -263,6 +272,7 @@ val sampleRestaurants = listOf(
         description = "Bar & Grill americano casual con ambiente familiar y menú variado",
         imageUrl = "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800",
         categories = listOf("Americana", "Carnes"),
+        rating = 3.9,
         menu = listOf(
             Dish(
                 id = 28,

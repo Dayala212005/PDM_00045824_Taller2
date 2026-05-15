@@ -6,5 +6,6 @@ class Restaurant (
     val description: String,
     val imageUrl: String,
     val categories: List<String>,
-    val menu: List<Dish>
+    val menu: List<Dish>,
+    val rating: Double
 )

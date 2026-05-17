@@ -43,88 +43,44 @@ fun AppScaffold(
     title: String,
     icon: ImageVector? = null,
     onIconClick: () -> Unit = {},
-    searchQuery: String = "",
-    onSearchQueryChange: (String) -> Unit = {},
     showBackButton: Boolean = false,
     onBackClick: () -> Unit = {},
     toastMessage: String? = null,
     content: @Composable (PaddingValues) -> Unit
 ) {
     val context = LocalContext.current
-    var isSearchVisible by remember { mutableStateOf(false) }
 
     LaunchedEffect(toastMessage) {
-        toastMessage?.let {
+        if (toastMessage != null) {
             Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show()
         }
     }
 
     Scaffold(
         topBar = {
-            Column {
-                TopAppBar(
-                    title = { Text(text = title) },
-                    navigationIcon = {
-                        if (showBackButton) {
-                            IconButton(onClick = onBackClick) {
-                                Icon(
-                                    imageVector = Icons.Filled.ArrowBack,
-                                    contentDescription = "Regresar"
-                                )
-                            }
-                        }
-                    },
-                    actions = {
-                        IconButton(onClick = { isSearchVisible = !isSearchVisible }) {
+            TopAppBar(
+                title = { Text(text = title) },
+                navigationIcon = {
+                    if (showBackButton) {
+                        IconButton(onClick = onBackClick) {
                             Icon(
-                                imageVector = if (isSearchVisible) Icons.Filled.Close else Icons.Filled.Search,
-                                contentDescription = "Buscar"
+                                imageVector = Icons.Filled.ArrowBack,
+                                contentDescription = "Regresar"
                             )
-                        }
-                        icon?.let {
-                            IconButton(onClick = onIconClick) {
-                                Icon(
-                                    imageVector = it,
-                                    contentDescription = title
-                                )
-                            }
                         }
                     }
-                )
-
-                AnimatedVisibility(visible = isSearchVisible) {
-                    TextField(
-                        value = searchQuery,
-                        onValueChange = onSearchQueryChange,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 16.dp, vertical = 8.dp),
-                        placeholder = { Text("Buscar...") },
-                        leadingIcon = {
+                },
+                actions = {
+                    icon?.let {
+                        IconButton(onClick = onIconClick) {
                             Icon(
-                                imageVector = Icons.Filled.Search,
-                                contentDescription = "Buscar"
+                                imageVector = it,
+                                contentDescription = title
                             )
-                        },
-                        trailingIcon = {
-                            if (searchQuery.isNotEmpty()) {
-                                IconButton(onClick = { onSearchQueryChange("") }) {
-                                    Icon(
-                                        imageVector = Icons.Filled.Close,
-                                        contentDescription = "Limpiar"
-                                    )
-                                }
-                            }
-                        },
-                        singleLine = true,
-                        shape = RoundedCornerShape(12.dp),
-                        colors = TextFieldDefaults.colors(
-                            focusedIndicatorColor = Color.Transparent,
-                            unfocusedIndicatorColor = Color.Transparent
-                        )
-                    )
+                        }
+                    }
                 }
-            }
+            )
         }
     ) { paddingValues ->
         content(paddingValues)
@@ -140,8 +96,6 @@ fun AppScaffoldPreview() {
         title = "Restaurantes",
         icon = Icons.Filled.Notifications,
         onIconClick = {},
-        searchQuery = searchQuery,
-        onSearchQueryChange = { searchQuery = it }
     ) { padding ->
         LazyRow(contentPadding = padding) {
             items(sampleRestaurants) { restaurant ->

@@ -1,6 +1,6 @@
 package com.pdm0126.foodspot.data.repositories.restaurantRepository
 
-import com.pdm0126.foodspot.dummydata.sampleRestaurants
+import com.pdm0126.foodspot.data.repositories.restaurantRepository.dummydata.sampleRestaurants
 import com.pdm0126.foodspot.model.Restaurant
 
 class RestaurantApiRepository: IRestaurantRepository {

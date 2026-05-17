@@ -1,4 +1,4 @@
-package com.pdm0126.foodspot.dummydata
+package com.pdm0126.foodspot.data.repositories.restaurantRepository.dummydata
 
 import com.pdm0126.foodspot.model.Dish
 import com.pdm0126.foodspot.model.Restaurant

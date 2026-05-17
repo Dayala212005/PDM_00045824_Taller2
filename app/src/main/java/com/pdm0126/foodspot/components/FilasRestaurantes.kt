@@ -24,7 +24,7 @@ fun FilasRestaurantes(
 ) {
 
     Column(
-        modifier = Modifier.padding(16.dp).fillMaxWidth().height(275.dp)
+        modifier = Modifier.padding(2.dp).fillMaxWidth().height(275.dp)
     ) {
         Text(text = categoryName,
             style = MaterialTheme.typography.titleMedium,
